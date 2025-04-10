@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'freq',
     'rbs',
     'rfid',
+    'material',
 ]
 
 MIDDLEWARE = [

@@ -24,7 +24,5 @@ urlpatterns = [
     path('freq/',include('freq.urls')),
     path('rbs/',include('rbs.urls')),
     path('rfid/',include('rfid.urls')),
-
-
-
+    path('materials/',include('material.urls')),
 ]
