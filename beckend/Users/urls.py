@@ -10,6 +10,7 @@ from .views import AdminUserCreateView
 urlpatterns = [
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('create-user/', AdminUserCreateView.as_view(), name='admin_create_user'),
-
+    path('admin/users/', AdminUserCreateView.as_view()),         # GET, POST
+    path('admin/users/<int:pk>/', AdminUserCreateView.as_view()) # PUT, DELETE
+    
 ]

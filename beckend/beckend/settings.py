@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rbs',
     'rfid',
     'material',
+    'ai_model.apps.AiModelConfig'
 ]
 
 MIDDLEWARE = [
