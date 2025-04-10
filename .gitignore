@@ -1,0 +1,51 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+
+# Django
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+media/
+static/
+
+# Environment files
+.env
+.venv/
+venv/
+env/
+env.bak/
+venv.bak/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Editor files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Coverage reports
+.coverage
+.coverage.*
+nosetests.xml
+test_*.xml
+tox.ini
+*.coverage
+
+# Pytest
+.cache/
+
+# Django migrations
+*/migrations/*.py
+*/migrations/*.pyc
+*/migrations/*.pyo
