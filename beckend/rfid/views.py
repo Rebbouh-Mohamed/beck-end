@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import RFID
 from .serializers import RFIDSerializer
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.permissions import IsAuthenticated, IsAdminUser,AllowAny
 from datetime import datetime
 
 class RFIDListView(APIView):
@@ -16,7 +16,7 @@ class RFIDListView(APIView):
 
 
 class RFIDCreateView(APIView):
-    permission_classes = [IsAdminUser]  # Only admins can create new RFID entries
+    permission_classes = [AllowAny]  # Only admins can create new RFID entries
 
     def post(self, request):
         # Deserialize the incoming data

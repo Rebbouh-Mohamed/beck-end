@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-z@8x7e_xhtn@82ku+c*x6!8l1l8=&yh(opeyxw$5#_rpg9#&i6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -47,18 +47,24 @@ INSTALLED_APPS = [
     'rbs',
     'rfid',
     'material',
-    'ai_model.apps.AiModelConfig'
+    'ai_model.apps.AiModelConfig',
+    'desc'
 ]
 
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # ✅ Must be first
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware',  # ✅ Only once
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+
 
 ROOT_URLCONF = 'beckend.urls'
 
@@ -146,3 +152,5 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }   
+
+CORS_ALLOW_ALL_ORIGINS = True
