@@ -12,6 +12,7 @@ class LogEntryAPIView(APIView):
         return Response(serializer.data)
 
     def post(self, request):
+        
         serializer = LogEntrySerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()

@@ -18,7 +18,7 @@ class ListingStatView(APIView):
     
     
 class SystemStatView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     def post(self, request):
         # Deserialize the incoming data

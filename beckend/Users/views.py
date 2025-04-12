@@ -14,6 +14,7 @@ class AdminUserCreateView(APIView):
         return Response(serializer.data)
 
     def post(self, request):
+        print(request.data)
         serializer = AdminUserCreateSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()

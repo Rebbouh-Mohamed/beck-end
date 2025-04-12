@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser,AllowAny
 from datetime import datetime
 
 class RFIDListView(APIView):
-    permission_classes = [IsAuthenticated]  # Only authenticated users can access this view
+    permission_classes = [AllowAny]  # Only authenticated users can access this view
 
     def get(self, request):
         rfid_data = RFID.objects.all()  # Get all RFID records

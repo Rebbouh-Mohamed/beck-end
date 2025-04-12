@@ -2,13 +2,13 @@ from rest_framework import status, permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated,AllowAny
 from .models import Material
 from .serializers import MaterialSerializer
 
 # To handle adding and listing of materials (only auth users can access)
 class MaterialListView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     def get(self, request):
         materials = Material.objects.all()  # List all materials
